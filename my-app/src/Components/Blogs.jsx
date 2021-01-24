@@ -11,7 +11,7 @@ const ColoredLine = ({ color }) => (
         style={{
             color: color,
             backgroundColor: color,
-            height: 5
+            height: 2
         }}
     />
 );
@@ -51,20 +51,18 @@ function Blogs(){
                 <>
                     {blogs.map((blog) => (
                         <Card bg="dark" 
-                        border="white" 
+                        border="secondary" 
                         className="blog-card" 
                         style={{ width: '17rem' }}
                         text="white"
                         >
-                            <ColoredLine color="white" />
-                            <Card.Body>
+                        <Card.Body>
                                 <Card.Title>{blog.title}</Card.Title>
                                 <ColoredLine color="white" />
                                 <Card.Text>
-                                    {blog.desc}
+                                {blog.desc}
                                 </Card.Text>
                             </Card.Body>
-                            <ColoredLine color="white" />
                             <Card.Footer className="text-muted">- {blog.author}</Card.Footer>
                         </Card>
                     ))
