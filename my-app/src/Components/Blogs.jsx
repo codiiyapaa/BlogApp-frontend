@@ -1,8 +1,21 @@
 import React, {useEffect, useState} from "react";
-
 import axios from "axios";
-
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/Row";
+//import CardDeck from 'react-bootstrap/CardDeck';
+//import Col from "react-bootstrap/Col";
+
+const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 5
+        }}
+    />
+);
+
 
 function Blogs(){
 
@@ -32,28 +45,38 @@ function Blogs(){
 
     return (
         <> 
+        <Container>
+            <Row>
             {blogs ? (
                 <>
                     {blogs.map((blog) => (
-                        <Card style={{ width: '18rem' }}>
+                        <Card bg="dark" 
+                        border="white" 
+                        className="blog-card" 
+                        style={{ width: '17rem' }}
+                        text="white"
+                        >
+                            <ColoredLine color="white" />
                             <Card.Body>
                                 <Card.Title>{blog.title}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">{blog.author}</Card.Subtitle>
+                                <ColoredLine color="white" />
                                 <Card.Text>
                                     {blog.desc}
                                 </Card.Text>
-                            
                             </Card.Body>
+                            <ColoredLine color="white" />
+                            <Card.Footer className="text-muted">- {blog.author}</Card.Footer>
                         </Card>
                     ))
 
                     }
+
                 </>
             ) : (
                 <></>
             )
             }
-            {/* <Card style={{ width: '18rem' }}>
+            {/*<Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Card Title</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
@@ -63,7 +86,9 @@ function Blogs(){
                     </Card.Text>
                    
                 </Card.Body>
-            </Card> */}
+            </Card>*/}
+            </Row>
+        </Container>
         </>
     )
 }
