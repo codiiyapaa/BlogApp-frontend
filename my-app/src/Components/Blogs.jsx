@@ -14,7 +14,7 @@ function Blogs(){
                 const headers = {
                     "Access-Control-Allow-Origin": "*"
                 }
-                const res = await axios.get("https://mostlypandatuts.herokuapp.com/api/blogs", headers);
+                const res = await axios.get("https://blogapp-test.herokuapp.com/api/blogs", headers);
                 console.log(res.data);
                 if(res.data){
                     setBlogs(res.data);
@@ -38,10 +38,9 @@ function Blogs(){
                         <Card style={{ width: '18rem' }}>
                             <Card.Body>
                                 <Card.Title>{blog.title}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                                <Card.Subtitle className="mb-2 text-muted">{blog.author}</Card.Subtitle>
                                 <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                    {blog.desc}
                                 </Card.Text>
                             
                             </Card.Body>
