@@ -8,24 +8,30 @@ import Button from 'react-bootstrap/Button';
 
 function Forms(){
     return(
-        <>
+        <div style={{
+            border: '2px solid black',
+            textAlign: 'left'
+        }}>
             <Container>
-            <Form>
+            <Form bg="dark" 
+                border="secondary" 
+                text="white"
+            >
             <Form.Row>
                 <Form.Group as={Col} controlId="Title">
-                <Form.Label>Title</Form.Label>
-                <Form.Control placeholder="Enter Title" />
+                <Form.Label column="lg" >Title</Form.Label>
+                <Form.Control size="lg" placeholder="Enter Title" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="Author Name">
                 <Form.Label>Author Name</Form.Label>
-                <Form.Control placeholder="Enter Author Name" />
+                <Form.Control size="lg" placeholder="Enter Author Name" />
                 </Form.Group>
             </Form.Row>
 
                 <Form.Group controlId="Description">
                 <Form.Label>Description</Form.Label>
-                <Form.Control placeholder="Enter description" />
+                <Form.Control size="lg" placeholder="Enter description" />
                 </Form.Group>
 
         <Button variant="dark" type="submit">
@@ -34,7 +40,7 @@ function Forms(){
         </Form>
     </Container>
 
-    </>
+    </div>
 
     )
 }
