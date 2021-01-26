@@ -1,7 +1,7 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
 import Container from "react-bootstrap/esm/Container";
-//import Row from "react-bootstrap/Row";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
 //import BorderPage from "./Borders";
@@ -10,7 +10,8 @@ function Forms(){
     return(
         <div style={{
             border: '2px solid black',
-            textAlign: 'left'
+            textAlign: 'left',
+            display: 'flex' 
         }}>
             <Container>
             <Form bg="dark" 
@@ -24,19 +25,21 @@ function Forms(){
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="Author Name">
-                <Form.Label>Author Name</Form.Label>
+                <Form.Label column="lg">Author Name</Form.Label>
                 <Form.Control size="lg" placeholder="Enter Author Name" />
                 </Form.Group>
             </Form.Row>
 
                 <Form.Group controlId="Description">
-                <Form.Label>Description</Form.Label>
-                <Form.Control size="lg" placeholder="Enter description" />
+                <Form.Label column="lg">Description</Form.Label>
+                <Form.Control as="textarea" rows={3} size="lg" placeholder="Enter description" />
                 </Form.Group>
 
-        <Button variant="dark" type="submit">
-            Submit
-        </Button>
+                <Form.Group as={Row}>
+                    <Col sm={{ span: 4, offset: 8, Order: "first"}}>
+                    <Button type="submit" variant="dark" size="lg" block>Submit</Button>
+                    </Col>
+                </Form.Group>
         </Form>
     </Container>
 
